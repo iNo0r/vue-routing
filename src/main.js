@@ -5,11 +5,15 @@ import App from './App.vue';
 
 import TeamsList from './components/teams/TeamsList.vue';
 import UsersList from './components/users/UsersList.vue';
-import TeamMembers from './components/teams/TeamMembers.vue'
+import TeamMembers from './components/teams/TeamMembers.vue';
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    {
+      path: '/',
+      redirect: '/teams'
+    },
     {
       path: '/teams',
       component: TeamsList
@@ -20,12 +24,12 @@ const router = createRouter({
     },
     //dynamic router
     {
-        path:'/teams/:teamId',
-        component:TeamMembers,
-        props:true
-    },
+      path: '/teams/:teamId',
+      component: TeamMembers,
+      props: true
+    }
   ],
-  linkActiveClass:'active'
+  linkActiveClass: 'active'
 });
 const app = createApp(App);
 
