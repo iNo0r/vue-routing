@@ -8,6 +8,7 @@
       :member-count="team.members.length"
     ></teams-item>
   </ul>
+   <router-view> </router-view>
 </template>
 
 <script>
@@ -15,9 +16,9 @@ import TeamsItem from './TeamsItem.vue';
 
 export default {
   components: {
-    TeamsItem,
+    TeamsItem
   },
-  inject: ['teams'],
+  inject: ['teams']
 };
 </script>
 
