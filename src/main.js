@@ -21,7 +21,8 @@ const router = createRouter({
     //dynamic router
     {
         path:'/teams/:teamId',
-        component:TeamMembers
+        component:TeamMembers,
+        props:true
     },
   ],
   linkActiveClass:'active'

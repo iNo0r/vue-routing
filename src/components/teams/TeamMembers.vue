@@ -26,9 +26,11 @@ export default {
       teamName: ''
     };
   },
+  inject: ['teams', 'users'],
+  props: ['teamId'],
   methods: {
-    loadTeamMembers: function(currentRoute) {
-      const teamId = currentRoute.params.teamId;
+    loadTeamMembers: function(currentTeamId) {
+      const teamId = currentTeamId;
       const selectedTeam = this.teams.find(team => team.id === teamId);
       const members = selectedTeam.members;
       const selectedMembers = [];
@@ -40,15 +42,14 @@ export default {
       this.teamName = selectedTeam.name;
     }
   },
-  inject: ['teams', 'users'],
   created() {
     //to show the current path
     // this.$route.path
-    this.loadTeamMembers(this.$route)
+    this.loadTeamMembers(this.teamId);
   },
   watch: {
-    $route(currentRoute){
-      this.loadTeamMembers(currentRoute)
+    teamId(currentTeamId) {
+      this.loadTeamMembers(currentTeamId);
     }
   }
 };
