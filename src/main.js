@@ -72,7 +72,19 @@ const router = createRouter({
   }
 });
 
-
+router.beforeEach((to,from,next)=>{
+    console.log('global')
+    console.log(to,from )
+    // to not allow the routing to contiue 
+    // next(false)
+    // to allow the routing to continue ,
+    next()
+    //another ways of utilzing next()
+    // next('/somewhere')
+    // next({name:'somethine", params:{someId:'d1'}})
+    // it is better to redirect with next() condtionally, other wise 
+    // we are going to end up in a loop 
+})
 const app = createApp(App);
 
 app.use(router);
