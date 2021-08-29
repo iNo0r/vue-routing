@@ -3,6 +3,12 @@
   <main>
     <router-view></router-view>
   </main>
+
+  <footer>
+    <!-- the name of the router view will be used at router configuration to assign 
+    components to a specific router-views -->
+    <router-view name="footer"></router-view>
+  </footer>
 </template>
 
 <script>
