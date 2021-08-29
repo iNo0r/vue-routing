@@ -54,7 +54,20 @@ const router = createRouter({
       component: NotFound
     }
   ],
-  linkActiveClass: 'active'
+  linkActiveClass: 'active',
+  scrollBehavior(to,from,savedPosition){
+      console.log(to,from ,savedPosition)
+      //it is usually undiefined but, when we go back it gets value,
+      // in the written function below it will go back to same positon 
+      if(savedPosition)
+      {
+          return savedPosition
+      }
+      return {
+          righ:0,
+          top:0
+      }
+  }
 });
 const app = createApp(App);
 
