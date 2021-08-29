@@ -16,12 +16,14 @@ const router = createRouter({
       redirect: '/teams'
     },
     {
+      name: 'teams',
       path: '/teams',
       component: TeamsList,
       children: [
-        // nested routing, which means it is gonna render inside the same page 
-        // where the parent is 
+        // nested routing, which means it is gonna render inside the same page
+        // where the parent is
         {
+          name: 'team-members',
           path: ':teamId',
           component: TeamMembers,
           props: true
