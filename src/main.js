@@ -55,8 +55,10 @@ const router = createRouter({
     }
   ],
   linkActiveClass: 'active',
-  scrollBehavior(to,from,savedPosition){
-      console.log(to,from ,savedPosition)
+  //i'v used _ and _2 just to reach the third argument without the need to use 
+  // to use the first 2 arguments 
+  scrollBehavior(_,_2,savedPosition){
+    //   console.log(to,from ,savedPosition)
       //it is usually undiefined but, when we go back it gets value,
       // in the written function below it will go back to same positon 
       if(savedPosition)
@@ -69,6 +71,8 @@ const router = createRouter({
       }
   }
 });
+
+
 const app = createApp(App);
 
 app.use(router);
