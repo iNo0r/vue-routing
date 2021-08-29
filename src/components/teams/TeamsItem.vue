@@ -8,16 +8,19 @@
 
 <script>
 export default {
-  props: ['name', 'memberCount','id'],
-  created(){
-
-  },
+  props: ['name', 'memberCount', 'id'],
+  created() {},
   computed: {
-    teamMembersLink(){
+    teamMembersLink() {
       // return `/teams/${this.id}`
       return {
-        name:'team-members', params:{teamId : this.id}
-      }
+        name: 'team-members',
+        params: { teamId: this.id },
+        // adding a query example
+        // query: { sort: 'asc' }
+      };
+      // you can alsot route with push method like this
+      // this.$router.push({name:'team-members',params:{teamId: this.id}})
     }
   }
 };

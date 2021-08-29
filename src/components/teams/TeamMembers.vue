@@ -46,6 +46,9 @@ export default {
     //to show the current path
     // this.$route.path
     this.loadTeamMembers(this.teamId);
+
+    //to recive query's value 
+    // console.log(this.$roue.query)
   },
   watch: {
     teamId(currentTeamId) {
