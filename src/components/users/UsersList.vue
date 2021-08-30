@@ -25,6 +25,11 @@ export default {
   //   console.log(to,from)
   // next()
   // }
+
+  // beforeRouteLeave (to, from, next) {
+  //   // primarly used to warn the user, if there is unsaved  changes in the page,
+  //   // before leaving 
+  // }
 };
 </script>
 
