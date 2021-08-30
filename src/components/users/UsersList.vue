@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { nextTick } from '@vue/runtime-core';
 import UserItem from './UserItem.vue';
 
 export default {
