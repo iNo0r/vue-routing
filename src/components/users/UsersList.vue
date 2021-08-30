@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { nextTick } from '@vue/runtime-core';
 import UserItem from './UserItem.vue';
 
 export default {
@@ -19,7 +20,12 @@ export default {
      // this.$router.back()
      // this.$router.forward()
     }
-  }
+  },
+  // beforeRouteEnter (to, from, next) {
+  //   // ...
+  //   console.log(to,from)
+  // next()
+  // }
 };
 </script>
 
