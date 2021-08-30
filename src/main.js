@@ -46,11 +46,11 @@ const router = createRouter({
         default: UsersList,
         footer: UsersFooter
       },
-      // this method is similar to before each, but this only fire 
+      // this method is similar to before each, but this only fire
       // when routing to this specific route
-      beforeEnter(to,from,next){
-          console.log('you are allowed to route into users')
-          next()
+      beforeEnter(to, from, next) {
+        console.log('you are allowed to route into users');
+        next();
       }
     },
 
@@ -89,6 +89,12 @@ router.beforeEach((to, from, next) => {
   // next({name:'somethine", params:{someId:'d1'}})
   // it is better to redirect with next() condtionally, other wise
   // we are going to end up in a loop
+});
+
+// router.afterEach((to, from) => {
+router.afterEach((_, _2) => {
+  //good for sending anlaytic data
+  // you dont use to control what user sees because it is too late 
 });
 const app = createApp(App);
 
